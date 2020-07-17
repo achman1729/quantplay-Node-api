@@ -1,29 +1,14 @@
 {
-  "name": "quantplay-api",
+  "name": "quantplay-node-api",
   "version": "0.0.0",
-  "engines": {
-    "node": "13.12.0",
-    "npm": "6.14.6"
-  },
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "express-server": "forever -c \"nodemon --exitcrash -L\" app.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "constantinople": "^4.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "lodash": "^4.17.19",
-    "morgan": "~1.9.1",
-    "websocket-extensions": "^0.1.4"
-  },
-  "devDependencies": {
-    "forever": "^3.0.0",
-    "nodemon": "^2.0.4"
+    "morgan": "~1.9.1"
   }
 }
