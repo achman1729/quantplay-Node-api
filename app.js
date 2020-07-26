@@ -19,7 +19,8 @@ app.use(
   )
 
 //   setting the Mongo database
-const mongoURI = 'mongodb://localhost:27017/userlogindb'
+// const mongoURI = 'mongodb://localhost:27017/userlogindb'
+const mongoURI = 'mongodb+srv://user-auth:cJS11mm5Wnot6mYf@cluster0.izu4g.mongodb.net/userlogindb?retryWrites=true&w=majority'
 
 mongoose.set('useUnifiedTopology', true)
 mongoose
@@ -43,3 +44,6 @@ app.use("/", indexRouter)
 app.use("/api/stocks", stocksRouter)
 
 module.exports = app
+
+// cJS11mm5Wnot6mYf
+// user-auth
