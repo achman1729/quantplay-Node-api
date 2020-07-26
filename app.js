@@ -44,6 +44,3 @@ app.use("/", indexRouter)
 app.use("/api/stocks", stocksRouter)
 
 module.exports = app
-
-// cJS11mm5Wnot6mYf
-// user-auth
