@@ -5,6 +5,7 @@ var logger = require('morgan')
 var cors = require("cors")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
+require('dotenv').config()
 
 var indexRouter = require("./routes/index")
 var stocksRouter = require("./routes/stock")
@@ -19,13 +20,12 @@ app.use(
   )
 
 //   setting the Mongo database
-// const mongoURI = 'mongodb://localhost:27017/userlogindb'
-const mongoURI = 'mongodb+srv://user-auth:cJS11mm5Wnot6mYf@cluster0.izu4g.mongodb.net/userlogindb?retryWrites=true&w=majority'
+// const mongoURI = 'mongodb+srv://user-auth:cJS11mm5Wnot6mYf@cluster0.izu4g.mongodb.net/userlogindb?retryWrites=true&w=majority'
 
 mongoose.set('useUnifiedTopology', true)
 mongoose
   .connect(
-    mongoURI,
+    process.env.mongoURI,
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB Connected'))

@@ -24,7 +24,7 @@ users.post('/register', (req, res) => {
   }
 
   // Returns one document that satisfies the specified query criteria on the collection. It is an async function and that's why can be chained with .then and .catch
-  // email: req.body.email is like a query to the find a record
+  // email: req.body.email is like a query to the find a record in the User model
   User.findOne({
     email: req.body.email
   })
