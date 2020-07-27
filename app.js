@@ -19,9 +19,6 @@ app.use(
     })
   )
 
-//   setting the Mongo database
-// const mongoURI = 'mongodb+srv://user-auth:cJS11mm5Wnot6mYf@cluster0.izu4g.mongodb.net/userlogindb?retryWrites=true&w=majority'
-
 mongoose.set('useUnifiedTopology', true)
 mongoose
   .connect(
