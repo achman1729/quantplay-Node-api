@@ -11,8 +11,11 @@ var indexRouter = require("./routes/index")
 var stocksRouter = require("./routes/stock")
 
 var app = express()
-
-app.use(cors())
+const corsOptions = {
+  origin: 'https://pacific-headland-14360.herokuapp.com/',
+  optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions))
 
 const mongoURI=`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.izu4g.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 
