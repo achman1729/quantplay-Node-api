@@ -1,11 +1,11 @@
 const express = require('express')
 const portf = express.Router()
 const cors = require('cors')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
-const saltRounds = 10
+// const jwt = require('jsonwebtoken')
+// const bcrypt = require('bcrypt')
+// const saltRounds = 10
 
-const User = require('../models/User')
+// const User = require('../models/User')
 portf.use(cors())
 
 const Portf = require('../models/Portfolio')
@@ -14,7 +14,7 @@ const Portf = require('../models/Portfolio')
 process.env.SECRET_KEY = 'secret'
 
 // route for create new portfolio
-portf.post('/portfolio', (req, res) => {
+portf.post('/build', (req, res) => {
   const today = new Date()
   // portfolio data comes via form in the front end in the req.body object
   const portfData = {
@@ -58,15 +58,15 @@ portf.post('/portfolio', (req, res) => {
 
 
 
-users.get('/portfolio', (req, res) => {
+portf.get('/ps', (req, res) => {
 // decoded the authorization token sent from the front end
 // 
 // var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 // console.log(req.headers['authorization'])
 
-Portf.find({
-    email: req.body.email
-})
+    Portf.find({
+        email: req.body.email
+    })
     .then(ps => {
         return res.json(ps)
     })
