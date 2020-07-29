@@ -20,7 +20,7 @@ app.use(cors(corsOptions))
 
 
 const mongoURI=`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.izu4g.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-
+console.log(mongoURI)
 mongoose.set('useUnifiedTopology', true)
 mongoose
   .connect(
