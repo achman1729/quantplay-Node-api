@@ -12,8 +12,8 @@ var stocksRouter = require("./routes/stock")
 
 var app = express()
 const corsOptions = {
-  // origin: 'https://pacific-headland-14360.herokuapp.com/',
-  origin: 'http://localhost:3000',
+  origin: 'https://quantify.netlify.app',
+  // origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
