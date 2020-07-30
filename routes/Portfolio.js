@@ -25,7 +25,8 @@ portf.post('/build', (req, res) => {
     description: req.body.description,
     begin: req.body.begin,
     cash: req.body.cash,
-    benchmark: req.body.benchmark
+    benchmark: req.body.benchmark,
+    trades: req.body.trades
 
   }
 
