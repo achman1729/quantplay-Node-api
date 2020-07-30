@@ -33,9 +33,9 @@ portf.post('/build', (req, res) => {
   // Returns one document that satisfies the specified query criteria on the collection. It is an async function and that's why can be chained with .then and .catch
   // email: req.body.email is like a query to the find a record in the User model
   Portf.findOne({
-    name: req.body.name,
-    email: req.body.email
-  })
+        name: req.body.name,
+        email: req.body.email
+    })
     .then(p => {
         if (p) {
         // replace
@@ -72,7 +72,26 @@ portf.get('/ps', (req, res) => {
         return res.json(ps)
     })
     .catch(err => {
-    res.send('error: ' + err)
+        res.send('error: ' + err)
     })
 })
+
+portf.get('/p', (req, res) => {
+    // decoded the authorization token sent from the front end
+    // 
+    // var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
+    // console.log(req.headers['authorization'])
+    
+    Portf.findOne({
+        name: req.body.name,
+        email: req.body.email
+    })
+    .then(p => {
+        return res.json(p)
+    })
+    .catch(err => {
+        res.send('error: ' + err)
+    })
+})
+
 module.exports = portf
